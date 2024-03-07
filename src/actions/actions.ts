@@ -2,7 +2,6 @@
 
 import { auth, signIn, signOut } from "@/lib/auth";
 import prisma from "@/lib/db";
-import { sleep } from "@/lib/utils";
 import { authSchema, petFormSchema, petIdSchema } from "@/lib/validations";
 import { revalidatePath } from "next/cache";
 import bcrypt from "bcryptjs";
@@ -227,6 +226,8 @@ export async function createCheckoutSession() {
     cancel_url: `${process.env.CANONICAL_URL}/payment?canceled=true`
   });
 
+  console.log('checkoutSession', checkoutSession);
+
   // redirect user
-  redirect(checkoutSession);
+  redirect(checkoutSession.url);
 }

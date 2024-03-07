@@ -3,6 +3,8 @@
 import { createCheckoutSession } from "@/actions/actions";
 import H1 from "@/components/h1";
 import { Button } from "@/components/ui/button";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 
 export default function Page({
@@ -11,10 +13,22 @@ export default function Page({
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
   const [isPending, startTransition] = useTransition();
-
+  const { data: session, update, status } = useSession();
+  const router = useRouter();
   return (
     <main className="flex flex-col items-center space-y-10">
       <H1>FurFriends access requires payment</H1>
+      {searchParams.success && (
+        <Button
+          disabled={status === "loading" || session?.user.hasAccess}
+          onClick={async () => {
+            await update(true);
+            router.push("/app/dashboard");
+          }}
+        >
+          Access FurFriends
+        </Button>
+      )}
       {!searchParams.success && (
         <Button
           disabled={isPending}
