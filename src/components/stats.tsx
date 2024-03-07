@@ -1,4 +1,5 @@
 "use client";
+
 import { usePetContext } from "@/lib/hooks";
 
 export default function Stats() {

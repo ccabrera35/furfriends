@@ -5,13 +5,8 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col xl:flex-row items-center justify-center bg-[#5DC9A8] min-h-screen gap-10">
-      <Image
-        src=""
-        alt="Preview"
-        width={519}
-        height={472}
-      />
+    <main className="bg-[#5DC9A8] min-h-screen flex flex-col xl:flex-row items-center justify-center gap-10">
+      <Image src="" alt="Preview" width={519} height={472} />
       <div>
         <Logo />
         <h1 className="text-5xl font-semibold my-6 max-w-[500px]">
@@ -24,9 +19,9 @@ export default function Home() {
         </p>
         <div className="mt-10 space-x-3">
           <Button asChild>
-            <Link href="/signup">Get Started</Link>
+            <Link href="/signup">Get started</Link>
           </Button>
-          <Button variant="secondary" asChild>
+          <Button asChild variant="secondary">
             <Link href="/login">Log in</Link>
           </Button>
         </div>

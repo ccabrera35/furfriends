@@ -7,7 +7,9 @@ import Image from "next/image";
 export default function PetList() {
   const { pets, selectedPetId, handleChangeSelectPetId } = usePetContext();
   const { searchQuery } = useSearchContext();
-  const filteredPets = pets.filter((pet) => pet.name.toLowerCase().includes(searchQuery));
+  const filteredPets = pets.filter((pet) =>
+    pet.name.toLowerCase().includes(searchQuery)
+  );
   return (
     <ul className="bg-white border-b border-light">
       {filteredPets.map((pet) => (

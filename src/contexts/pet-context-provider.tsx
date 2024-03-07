@@ -55,7 +55,6 @@ export function PetContextProvider({
 
   const handleAddPet = async (newPet: PetEssentials) => {
     setOptimisticPets({ action: "add", payload: newPet });
-
     const error = await addPet(newPet);
     if (error) {
       toast.warning(error.message);
@@ -75,12 +74,10 @@ export function PetContextProvider({
   const handlePetCheckout = async (petId: Pet["id"]) => {
     setOptimisticPets({ action: "delete", payload: petId });
     const error = await deletePet(petId);
-
     if (error) {
       toast.warning(error.message);
       return;
     }
-
     setSelectedPetId(null);
   };
 
