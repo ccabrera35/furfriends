@@ -1,5 +1,4 @@
 import NextAuth, { NextAuthConfig } from "next-auth";
-// import Credentials from "@auth/core/providers/credentials";
 import Credentials from "next-auth/providers/credentials";
 import { getUserByEmail } from "./server-utils";
 import bcrypt from "bcryptjs";
@@ -13,6 +12,7 @@ export const config = {
     Credentials({
       async authorize(credentials) {
         // runs on login
+        
         // validation
         const validatedFormData = authSchema.safeParse(credentials);
         if (!validatedFormData.success) {

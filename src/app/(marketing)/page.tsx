@@ -2,12 +2,12 @@ import Logo from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import snapshot from "../../../public/furFriendsSnapshot.png"
+import snapshot from "../../../public/fur-friends.png"
 
 export default function Home() {
   return (
-    <main className="bg-[#5DC9A8] min-h-screen flex flex-col xl:flex-row items-center justify-center gap-10">
-      <Image src={snapshot} alt="Preview of FurFriends" width={519} height={472} />
+    <main className="bg-[#B3B8FF] min-h-screen flex flex-col xl:flex-row items-center justify-center gap-10">
+      <Image src={snapshot} alt="Preview of FurFriends" width={519} height={472} className="rounded-lg"/>
       <div>
         <Logo />
         <h1 className="text-5xl font-semibold my-6 max-w-[500px]">
