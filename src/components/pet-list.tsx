@@ -11,7 +11,7 @@ export default function PetList() {
     pet.name.toLowerCase().includes(searchQuery)
   );
   return (
-    <ul className="bg-white border-b border-light">
+    <ul className="bg-white border-b border-light overflow-auto">
       {filteredPets.map((pet) => (
         <li key={pet.id}>
           <button

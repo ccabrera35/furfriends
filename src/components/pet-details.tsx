@@ -45,12 +45,14 @@ function TopBar({ pet }: Props) {
         alt="Selected pet image"
         height={75}
         width={75}
-        className="h-[75px] w-[75px] rounded-full object-cover"
+        className="h-14 w-14 sm:h-[75px] sm:w-[75px] rounded-full object-cover"
       />
 
-      <h2 className="text-3xl font-semibold leading-7 ml-5">{pet.name}</h2>
+      <h2 className="text-xl mx-2 sm:text-3xl font-semibold leading-7 sm:ml-5">
+        {pet.name}
+      </h2>
 
-      <div className="ml-auto space-x-2">
+      <div className="ml-auto flex space-x-2">
         <PetButton actionType="edit">Edit</PetButton>
         <PetButton
           actionType="checkout"

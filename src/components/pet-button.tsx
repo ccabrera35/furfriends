@@ -30,7 +30,7 @@ export default function PetButton({
 
   if (actionType === "checkout") {
     return (
-      <Button variant="secondary" disabled={disabled} onClick={onClick}>
+      <Button variant="destructive" disabled={disabled} onClick={onClick}>
         {children}
       </Button>
     );
