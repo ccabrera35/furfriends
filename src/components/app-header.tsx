@@ -25,7 +25,8 @@ export default function Header() {
                 className={cn(
                   "text-white/70 rounded-sm px-2 py-1 hover:text-white focus:text-white transition",
                   {
-                    "bg-black/10 text-white": route.path === activePathname}
+                    "bg-black/10 text-white": route.path === activePathname
+                  }
                 )}
               >
                 {route.label}

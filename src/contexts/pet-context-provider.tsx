@@ -22,6 +22,7 @@ type TPetContext = {
   handleChangeSelectPetId: (id: Pet["id"]) => void;
 };
 
+
 export const PetContext = createContext<TPetContext | null>(null);
 
 export function PetContextProvider({

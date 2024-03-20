@@ -7,17 +7,17 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogContent,
-  DialogHeader,
+  DialogHeader
 } from "./ui/dialog";
 import PetForm from "./pet-form";
 import { useState } from "react";
 import { flushSync } from "react-dom";
 
 type PetButtonProps = {
+  children?: React.ReactNode;
   actionType: "add" | "edit" | "checkout";
   disabled?: boolean;
   onClick?: () => void;
-  children?: React.ReactNode;
 };
 
 export default function PetButton({

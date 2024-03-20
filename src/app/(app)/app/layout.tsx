@@ -8,11 +8,11 @@ import { Toaster } from "@/components/ui/sonner";
 
 type LayoutProps = {
   children: React.ReactNode;
+  // delete bottom
+  age: number;
 };
 
-export default async function Layout({
-  children,
-}: LayoutProps) {
+export default async function Layout({ children }: LayoutProps) {
   const session = await checkAuth();
   const pets = await getPetsByUserId(session.user.id);
 
