@@ -12,7 +12,6 @@ export const config = {
     Credentials({
       async authorize(credentials) {
         // runs on login
-        
         // validation
         const validatedFormData = authSchema.safeParse(credentials);
         if (!validatedFormData.success) {

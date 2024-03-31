@@ -8,8 +8,6 @@ import { Toaster } from "@/components/ui/sonner";
 
 type LayoutProps = {
   children: React.ReactNode;
-  // delete bottom
-  age: number;
 };
 
 export default async function Layout({ children }: LayoutProps) {
